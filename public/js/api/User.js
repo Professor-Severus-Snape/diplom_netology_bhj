@@ -84,13 +84,13 @@ class User {
       url: `${this.URL}/register`,
       data,
       method: "POST",
-      // callback
-      callback: (err, response) => {
-        if (response.success && response.user) {
-          this.setCurrent(response.user);
-        }
-        callback(err, response);
-      }
+      callback
+      // callback: (err, response) => {
+      //   if (response.success && response.user) {
+      //     this.setCurrent(response.user);
+      //   }
+      //   callback(err, response);
+      // }
     };
     createRequest(options);
   }

@@ -5,6 +5,12 @@
       "email": "demo@demo",
       "password": "demo",
       "id": "1"
+    },
+    {
+      "name": "Alan Rickman",
+      "email": "alan@rickman",
+      "password": "123",
+      "id": "sktwij8lluq2fc5d"
     }
   ],
   "accounts": [
