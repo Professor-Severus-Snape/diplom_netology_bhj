@@ -13,9 +13,9 @@ class Entity {
   static list(data, callback) {
     const options = {
       url: this.URL,
-      data: data,
+      data,
       method: "GET",
-      callback: callback,
+      callback
     };
     createRequest(options);
   }
@@ -28,9 +28,9 @@ class Entity {
   static create(data, callback) {
     const options = {
       url: this.URL,
-      data: data,
+      data,
       method: "PUT",
-      callback: callback,
+      callback
     };
     createRequest(options);
   }
@@ -42,9 +42,9 @@ class Entity {
   static remove(data, callback) {
     const options = {
       url: this.URL,
-      data: data,
+      data,
       method: "DELETE",
-      callback: callback,
+      callback
     };
     createRequest(options);
   }

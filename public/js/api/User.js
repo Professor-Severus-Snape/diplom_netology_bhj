@@ -37,17 +37,16 @@ class User {
   static fetch(callback) {
     const options = {
       url: `${this.URL}/current`,  // "/user/current"
-      // data: {},
       method: "GET",
-      // callback: callback,
+      // callback
       callback: (err, response) => {
-        if (response.success === true && response.user) {
+        if (response.success && response.user) {
           this.setCurrent(response.user);
         } else {
           this.unsetCurrent();
         }
         callback(err, response);
-      },
+      }
     };
     createRequest(options);
   }
@@ -61,15 +60,15 @@ class User {
   static login(data, callback) {
     const options = {
       url: `${this.URL}/login`,
-      data: data,
+      data,
       method: "POST",
-      // callback: callback,
-      callback: (err, response) => {
-        if (response.success === true && response.user) {
-          this.setCurrent(response.user);
-        }
-        callback(err, response);
-      }
+      callback
+      // callback: (err, response) => {
+      //   if (response.success && response.user) {
+      //     this.setCurrent(response.user);
+      //   }
+      //   callback(err, response);
+      // }
     };
     createRequest(options);
   }
@@ -83,11 +82,11 @@ class User {
   static register(data, callback) {
     const options = {
       url: `${this.URL}/register`,
-      data: data,
+      data,
       method: "POST",
-      // callback: callback,
+      // callback
       callback: (err, response) => {
-        if (response.success === true && response.user) {
+        if (response.success && response.user) {
           this.setCurrent(response.user);
         }
         callback(err, response);
@@ -103,15 +102,14 @@ class User {
   static logout(callback) {
     const options = {
       url: `${this.URL}/logout`,
-      // data: {},
       method: "POST",
-      // callback: callback,
+      // callback
       callback: (err, response) => {
-        if (response.success === true && response.user) {
+        if (response.success && response.user) {
           this.unsetCurrent(response.user);
         }
         callback(err, response);
-      },
+      }
     };
     createRequest(options);
   }
