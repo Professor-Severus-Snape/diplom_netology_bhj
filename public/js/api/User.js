@@ -38,7 +38,6 @@ class User {
     const options = {
       url: `${this.URL}/current`,  // "/user/current"
       method: "GET",
-      // callback
       callback: (err, response) => {
         if (response.success && response.user) {
           this.setCurrent(response.user);
@@ -62,13 +61,12 @@ class User {
       url: `${this.URL}/login`,
       data,
       method: "POST",
-      callback
-      // callback: (err, response) => {
-      //   if (response.success && response.user) {
-      //     this.setCurrent(response.user);
-      //   }
-      //   callback(err, response);
-      // }
+      callback: (err, response) => {
+        if (response.success && response.user) {
+          this.setCurrent(response.user);
+        }
+        callback(err, response);
+      }
     };
     createRequest(options);
   }
@@ -84,13 +82,12 @@ class User {
       url: `${this.URL}/register`,
       data,
       method: "POST",
-      callback
-      // callback: (err, response) => {
-      //   if (response.success && response.user) {
-      //     this.setCurrent(response.user);
-      //   }
-      //   callback(err, response);
-      // }
+      callback: (err, response) => {
+        if (response.success && response.user) {
+          this.setCurrent(response.user);
+        }
+        callback(err, response);
+      }
     };
     createRequest(options);
   }
@@ -103,7 +100,6 @@ class User {
     const options = {
       url: `${this.URL}/logout`,
       method: "POST",
-      // callback
       callback: (err, response) => {
         if (response.success && response.user) {
           this.unsetCurrent(response.user);

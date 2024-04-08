@@ -39,8 +39,6 @@ class AsyncForm {
    * }
    * */
   getData() {
-    // const formData = new FormData(this.element);
-    // return Object.fromEntries(formData.entries()); // вернёт объект, сформированный из ключей и значений formData
     return new FormData(this.element); // вернёт целиком экземпляр класса formData
   }
 
