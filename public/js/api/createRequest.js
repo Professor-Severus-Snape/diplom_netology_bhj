@@ -17,11 +17,6 @@ const createRequest = (options = {}) => {
   const xhr = new XMLHttpRequest;
   xhr.responseType = "json";
 
-  const {url, data = null, method} = options; // деструктуризация объекта
-  console.log('url: ', url); // url: "/user/current"  // отладка
-  console.log('data: ', data); // null || объект FormData  // отладка
-  console.log('method: ', method); // "GET"  // отладка
-
   xhr.addEventListener("load", () => {
     options.callback(null, xhr.response); // {success: true, user: Object}
   });
@@ -30,18 +25,24 @@ const createRequest = (options = {}) => {
     options.callback(new Error("Ошибка запроса!"), null);
   });
 
-  if (method === "GET") {
-    console.log("Это GET-запрос");  // отладка
-  } else {
-    console.log("Это не GET-запрос!");  // отладка
+  if (options.method === "GET" && options.data) {
+    let flag = true;
+    Object.entries(options.data).forEach(([key, value]) => {
+      if (flag) {
+        options.url += "?";
+        flag = false;
+      } else {
+        options.url += "&";
+      }
+      options.url += `${key}=${value}`; "/account?name=demo&email=demo@demo&id=1"
+    });
+    options.data = null;
   }
 
   try {
-    xhr.open(method, url);
-    xhr.send(data);
-    console.log("Блок try завершился без ошибок!");  // отладка
+    xhr.open(options.method, options.url);
+    xhr.send(options.data);
   } catch(err) {
-    console.log("Внимание! Мы в блоке catch!!!");  // отладка
     options.callback(err, null);
   }
 };
