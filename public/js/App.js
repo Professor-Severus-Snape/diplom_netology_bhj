@@ -4,7 +4,7 @@
 class App {
   /**
    * С вызова этого метода начинается работа всего приложения
-   * Он производит перваоначальную настройку всех
+   * Он производит первоначальную настройку всех
    * страниц, форм, виджетов, всплывающих окон, а также
    * боковой колонки
    * */
@@ -123,7 +123,7 @@ class App {
    * Возвращает форму по названию
    * Обращается к объекту App.forms и извлекает
    * из него свойство formName:
-   * App.getWidget( 'transactions' ); // извелекает App.forms.transactions
+   * App.getWidget( 'transactions' ); // извлекает App.forms.transactions
    * */
   static getForm(formName) {
     return this.forms[formName];
