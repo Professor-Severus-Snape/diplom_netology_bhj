@@ -28,6 +28,21 @@
       "name": "Бизнес",
       "user_id": "1",
       "id": "3"
+    },
+    {
+      "name": "Сбер",
+      "user_id": "1",
+      "id": "sktwi183lur2q6ib"
+    },
+    {
+      "name": "Тинькофф",
+      "user_id": "1",
+      "id": "sktwi1dnlur2rjsg"
+    },
+    {
+      "name": "Gringotts",
+      "user_id": "sktwij8lluq2fc5d",
+      "id": "sktwi1gylur30gqg"
     }
   ],
   "transactions": [
