@@ -34,7 +34,7 @@ const createRequest = (options = {}) => {
       } else {
         options.url += "&";
       }
-      options.url += `${key}=${value}`; "/account?name=demo&email=demo@demo&id=1"
+      options.url += `${key}=${value}`; // "/account?name=demo&email=demo@demo&id=1"
     });
     options.data = null;
   }
